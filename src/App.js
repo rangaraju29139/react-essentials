@@ -19,6 +19,9 @@ function NormalContent(){
   );
 }
 
+const [first , , third]= ["first","second","third"];
+console.log(first);
+console.log(third);
 
 function App(props) {
 
