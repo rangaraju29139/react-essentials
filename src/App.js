@@ -21,12 +21,14 @@ function NormalContent(){
 
 
 function App(props) {
+
+  return (
+    <>
+    {props.authorised ? <SecretContent /> : <NormalContent /> }
+    </>
+  );
   
-    if(props.authorised){
-     return  <SecretContent />;
-    }else{
-     return  <NormalContent />
-    }
+
     
 
 }
