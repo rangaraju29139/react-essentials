@@ -1,33 +1,34 @@
 
 import './App.css';
+import React,{useState} from "react";
 
 
 
 
 
 
-function SecretContent(){
+function EmotionState(){
+  const [Emotion,setEmotion]= useState("Happy");
+  console.log(Emotion);
   return (
-    <h1>This is the secret content....</h1>
+    <>
+    <h1>The current Emotion is {Emotion} </h1>
+    <button on onClick={() => setEmotion("Frustrate")}> Frustrate </button>
+    <button on onClick={() => setEmotion("Happy")}> Happy </button>
+    <button on onClick={() => setEmotion("sad")}> sad </button>
+    </>
+    
   );
 }
 
 
-function NormalContent(){
-  return (
-    <h1>This is the normal content available to everyone....</h1>
-  );
-}
 
-const [first , , third]= ["first","second","third"];
-console.log(first);
-console.log(third);
 
 function App(props) {
 
   return (
     <>
-    {props.authorised ? <SecretContent /> : <NormalContent /> }
+    <EmotionState />
     </>
   );
   
