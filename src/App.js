@@ -1,6 +1,6 @@
 
 import './App.css';
-import React,{useState} from "react";
+import React,{useState, useEffect } from "react";
 
 
 
@@ -8,8 +8,12 @@ import React,{useState} from "react";
 
 
 function EmotionState(){
-  const [Emotion,setEmotion]= useState("Happy");
+  const [Emotion,setEmotion] = useState("Happy");
   console.log(Emotion);
+  useEffect(()=> {
+    console.log(`its ${Emotion} around here`);
+  },[Emotion]
+  );
   return (
     <>
     <h1>The current Emotion is {Emotion} </h1>
@@ -25,6 +29,7 @@ function EmotionState(){
 
 
 function App(props) {
+ 
 
   return (
     <>
