@@ -1,30 +1,33 @@
 
 import './App.css';
-import React,{useReducer } from "react";
+import React,{useEffect,useState } from "react";
 
 
 
 
 
 
-
+//https://api.github.com/users/rangaraju29139
 
 
 
 function App(props) {
- const [checked,toggle]=useReducer(
-  (checked => !checked),
-  false
-  ); 
+ const [data,setData]=useState(null);
+ useEffect(
+    () => {fetch(`https://api.github.com/users/rangaraju29139`)
+    .then((response)=> response.json())
+    .then(setData);
+    }
+    ,[]
+ );
 
- 
+ //https://api.github.com/users/rangaraju29139
 
-  return (
-    <>
-    <input type="checkbox" value={checked} onChange={toggle}></input>
-    <p>the checkBox is {checked ? "checked": "unChecked"} </p>
-    </>
-  );
+  if(data){
+    return <div>{JSON.stringify(data)}</div>
+  }else{
+    return <div>NO Data</div>
+  }
   
 
     
