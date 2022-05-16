@@ -24,7 +24,13 @@ function App(props) {
  //https://api.github.com/users/rangaraju29139
 
   if(data){
-    return <div>{JSON.stringify(data)}</div>
+    return (<div>
+     <h1>{data.login}</h1>
+     <p>{data.location}</p>
+     <img alt={data.avatar_url} src={data.avatar_url} />
+     
+     
+      </div>)
   }else{
     return <div>NO Data</div>
   }
